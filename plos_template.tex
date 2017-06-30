@@ -1,0 +1,355 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
+
+% Use adjustwidth environment to exceed column width (see example table in text)
+\usepackage{changepage}
+
+% Use Unicode characters when possible
+\usepackage[utf8]{inputenc}
+
+% textcomp package and marvosym package for additional characters
+\usepackage{textcomp,marvosym}
+
+% fixltx2e package for \textsubscript
+\usepackage{fixltx2e}
+
+% amsmath and amssymb packages, useful for mathematical formulas and symbols
+\usepackage{amsmath,amssymb}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+% Use nameref to cite supporting information files (see Supporting Information section for more info)
+\usepackage{nameref,hyperref}
+
+% line numbers
+\usepackage[right]{lineno}
+
+% ligatures disabled
+\usepackage{microtype}
+\DisableLigatures[f]{encoding = *, family = * }
+
+% rotating package for sideways tables
+\usepackage{rotating}
+
+% Remove comment for double spacing
+%\usepackage{setspace} 
+%\doublespacing
+
+% Text layout
+\raggedright
+\setlength{\parindent}{0.5cm}
+\textwidth 5.25in 
+\textheight 8.75in
+
+% Bold the 'Figure #' in the caption and separate it from the title/caption with a period
+% Captions will be left justified
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+
+% Use the PLoS provided BiBTeX style
+\bibliographystyle{plos2015}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+% Leave date blank
+\date{}
+
+% Header and Footer with logo
+\usepackage{lastpage,fancyhdr,graphicx}
+\usepackage{epstopdf}
+\pagestyle{myheadings}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\includegraphics[width=2.0in]{PLOS-Submission.eps}}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+\fancyheadoffset[L]{2.25in}
+\fancyfootoffset[L]{2.25in}
+\lfoot{\sf PLOS}
+
+%% Include all macros below
+
+\newcommand{\lorem}{{\bf LOREM}}
+\newcommand{\ipsum}{{\bf IPSUM}}
+
+%% END MACROS SECTION
+
+\begin{document}
+\vspace*{0.35in}
+
+% Title must be 250 characters or less.
+% Please capitalize all terms in the title except conjunctions, prepositions, and articles.
+\begin{flushleft}
+{\Large
+\textbf\newline{Article Title}
+}
+\newline
+% Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
+\\
+Name1 Surname\textsuperscript{1,\Yinyang},
+Name2 Surname\textsuperscript{2,\Yinyang},
+Name3 Surname\textsuperscript{2,\textcurrency a},
+Name4 Surname\textsuperscript{2,\ddag},
+Name5 Surname\textsuperscript{2,\ddag},
+Name6 Surname\textsuperscript{2},
+Name7 Surname\textsuperscript{3,*},
+with the Lorem Ipsum Consortium\textsuperscript{\textpilcrow}
+\\
+\bigskip
+\bf{1} Affiliation Dept/Program/Center, Institution Name, City, State, Country
+\\
+\bf{2} Affiliation Dept/Program/Center, Institution Name, City, State, Country
+\\
+\bf{3} Affiliation Dept/Program/Center, Institution Name, City, State, Country
+\\
+\bigskip
+
+% Insert additional author notes using the symbols described below. Insert symbol callouts after author names as necessary.
+% 
+% Remove or comment out the author notes below if they aren't used.
+%
+% Primary Equal Contribution Note
+\Yinyang These authors contributed equally to this work.
+
+% Additional Equal Contribution Note
+% Also use this double-dagger symbol for special authorship notes, such as senior authorship.
+\ddag These authors also contributed equally to this work.
+
+% Current address notes
+\textcurrency a Insert current address of first author with an address update
+% \textcurrency b Insert current address of second author with an address update
+% \textcurrency c Insert current address of third author with an address update
+
+% Deceased author note
+\dag Deceased
+
+% Group/Consortium Author Note
+\textpilcrow Membership list can be found in the Acknowledgments section.
+
+% Use the asterisk to denote corresponding authorship and provide email address in note below.
+* CorrespondingAuthor@institute.edu
+
+\end{flushleft}
+% Please keep the abstract below 300 words
+\section*{Abstract}
+
+
+The irreproducibility crisis in psychology is in part an interpretability crisis, as conclusions are drawn from inferences that ignore the limitations of the  methodology.
+heteroscedasticity \footnote{The word comes from the Greek verb skedanime, which means to disperse or scatter}
+% Please keep the Author Summary between 150 and 200 words
+% Use first person. PLOS ONE authors please skip this step. 
+% Author Summary not valid for PLOS ONE submissions.   
+\section*{Author Summary}
+We take a critical look to these assumptions
+
+\linenumbers
+
+
+\section*{Introduction}
+\label{se:intro}
+fMRI is one of the most common approaches to study brain function, in particular human cognition. Despite its pervasiveness and the remarkable scientific output a complete understanding of the link between the haemodynamic response and the neural underpinnings is missing.
+%There is abundant literature on the caveats of using blood oxygen level-dependent (BOLD) contrast mechanism to localize neural activity. 
+A fully satisfactory interpretation of the BOLD response has not been achieved yet, and conflicting candidates for the neurophysiological mechanisms that trigger the signal have been postulated. For example, in \cite{lee2010global} it is found that excitatory neurons trigger vascular changes that are picked up by the BOLD signal. However, other studies show that the haemodynamic response is also present in the absence of neural firing \citep{goense2008neurophysiology}, \citep{sirotin2009anticipatory}. 
+It is possible to bring some clarity here by reckoning that the haemodynamic response is primarily driven by changes in metabolic demands which are at its turn induced by neural activity of different sorts, including both excitatory and inhibitory inputs, neural spiking and neuromodulation \citep{logothetis2008we}.  
+
+%The limitations The paper by Eklund and colleagues \cite{eklund2016cluster} has prompted a considerable unsettling in the fMRI community. Media outlets have rushed to claim that statistical methods used in fMRI, in particular, parametric cluster-wise inference, have been wrongly identifying regions of brain activity. For the last fifteen years, when the most common software tools (AFSL, FSL and SPM) were available, reports on brain activity across 400,000 published studies could be in reality the result of a careless treatment of false-positive rates. That there is room for improvement in the statistical methods in fMRI is not news. In a 2009 study, voxels in a dead salmon's brain were active (in statistical terms) when shown a series of photographs. The study was awarded with the IgNobel Prize in Neuroscience and reminded fMRI practitioners of the dangers of not correcting for the multiple comparisons problem.
+% http://reproducibility.stanford.edu/big-problems-for-common-fmri-thresholding-methods/
+
+ 
+We might, however, want to distinguish between limitations that come from the technology being used and that can be eventually overcome or progressively improved, for example, the magnetic field strength, scan time reductions, high-density electrode array to simultaneously stimulate the brain while imaging, from the limitations inherent in the statistical model used. In a recent paper \cite{eklund2016cluster} Eklund and colleagues argue that statistical methods used in fMRI, in particular, parametric cluster-wise inference, have been wrongly identifying regions of brain activity. For the last fifteen years, when the most common software tools (AFSL, FSL and SPM) were available, reports on brain activity across 400,000 published studies could be in reality the result of a careless treatment of false-positive rates. 
+%That there is room for improvement in the statistical methods in fMRI is not news. In a 2009 study, voxels in a dead salmon's brain were active (in statistical terms) when shown a series of photographs. The study was awarded with the IgNobel Prize in Neuroscience and reminded fMRI practitioners of the dangers of not correcting for the multiple comparisons problem.
+
+At the core of the criticism elicited by the Eklund and colleagues is the poor understanding of physiological noise and more importantly on the assumptions  
+made in theoretical framework used in the study of fMRI timer-series. The time series analysis of fMRI relies on a general linear model (GLM) approach, which as any other inferential model requires that a set of assumption about the data hold true. 
+The goal of this paper is to review some of these assumptions, not as mere reminder of the obvious point that for a statistical model to be valid its assumptions need to be met but rather to show that resting state fMRI can benefit enormously if we study the stochastic properties of brain time series on their own. In particular we pay attention to the homoscedasticity assumption which despite the major consequences that has in the interpretability of fMRI results is poorly understood and very rarely investigated \citep{lindquist2014evaluating}. 
+
+\subsection*{GLM}
+The General Linear Model (GLM) is a massive-univariate approach that constructs a regression model to capture how the BOLD signal in a voxel should vary in response to a stimulus. GLM fits the model l independently to the time-course of each voxel.
+%The generalized linear model (GLM) is a flexible generalization of ordinary linear regression that allows for response variables that have error distribution models other than a normal distribution.
+%The BOLD response, y, is sampled n times (volumes or time points). 
+In the GLM applied to fMRI data, the BOLD response, $y$, is sampled n times (volumes), the intensity of the BOLD signal at each observation $y_i, i =1..n$ is modeled as the sum of a number of known predictor variables $x_1,...,x_p$ each scaled by a parameter $\beta$, $y_i = \sum_{j=1}^{p} \beta_j x_{i,j} + \epsilon_i$. 
+A most compact notation of the GLM is $Y = \beta X + \epsilon$, where Y is a $n \times 1$ column vector representing the BOLD signal time series for one voxel, X is a $n \times p$ design matrix where each column is a predictor variable, $\beta$ is a $p \times 1$ vector of unknown weights setting the magnitude between the predictor variable Y and $\epsilon$ is a $n x 1$ vector containing the errors associated with each observation, not explained by the weighted sum of the predictor variables. 
+The predictor variables or effects typically include regressors of interest related with the task and nuisance regressors. 
+The regression problem of estimating the $\beta$ parameters and therefore to assess whether a a predictor explains the variance observed in the voxel's uses ordinary squares methods, mainly OLS and GLS. The optimal parameters are those that minimize the residuals $\sum_{i=1}^{n}(Y_i - X_i \hat{\beta})$. The unknown parameter and its variance are directly estimated as: $\hat{\beta} = (X^T X)^{-1}X^T Y$ and $var(\hat{\beta} = \sigma^2(X^T X)^{-1}$.
+According to the Markov-Gauss theorem, the OLS is the best linear unbiased estimator of the population parameters, provided the assumptions. 
+%Spatial covariance between neighboring voxels is thus typically ignored at the model  fitting stage. 
+\subsection*{Heteroscedasticity}
+
+The standard GLM relies upon a set of assumptions: linearity, no regressor is a linear transformation of one or more regressors, the errors for different observations or time points are not correlated and follow a Gaussian distribution with 0 mean and constant variance or homoscedasticity. While some of the implicatiosn of these assumptions have been studied and ways to relax them have been proposed \cite{lund2006non},\citep{murphy2007long}, \citep{eklund2012does}, homocedasticity has been poorly studied. 
+The homocedasticity assumption states that the variance of residuals is constant across observations (time points or volumes) and the covariances (off-diagonal elements in the variance-covariance matrix) are 0. If this assumption is not met, the parameter estimate $\hat{\beta}$ is still unbiased but not efficient (confidence intervals too long or too short), the variance covariance matrix is then the diagonal matrix scaled by the variance $I\sigma^2$.
+A time series that si not homoscedastic is heteroscedastic. Heteroscedasticity is time-varying variability or volatility in a time series.
+
+%OLS, GLS (GLS is OLS on the transformed variables that satisfy the standard least-squares assumptions) and Sandwich approaches. 
+Not coincidentally Eklund \citep{eklund2017bayesian} has proposed to include heteroscedasticity in the vanilla GLM approach to fMRI data. %modeling heterocesdaticity
+In this model the noise variance is allowed to change over time, this allows to weight the scans based on some uncertainty measure, scans with large uncertainty compares to other scans are automatically  remove when inferring connectivity or brain activity.
+%The GLMH introduces heterocesdasticity so that that the noise produced at time t remains large in subsequent scans, which is desireable as it has been shown that motion related signal changes can persist more than 10 seconds after motion ceases. \citep{power2014methods}.
+The GLMH model proposed by Elklund shows that the homoscedastic model overestimates the constant variance term, the heteroscedastic model instead, as it models the variance increases is able to detect more brain activity. The GLMH can be used not only for brain activity estimation, but also for estimating functional connectivity, for example using covariates that affect the variance in the design matrix. 
+
+Heteroscedasticity has received very little attention in the fMRI literature, the few works that deal with this variance variability in the BOLD time series focus exclusively in head motion as the only relevant factor to explain variance of the errors in the regression model across observations (volumes) \citep{luo2003diagnosis}, \citep{diedrichsen2005detecting},\citep{eklund2017bayesian}. 
+The GLMH arises out of the observation that the inclusion in the design matrix of head motion parameters and possibly their temporal derivatives remove motion related variance but not all of it. However, the heteroscedasticity found in the residual (after fitting the model with the design matrix) time series may not be entirely explained by motion correction. The idea that motion spikes is what makes the noise heteroscedastic is in need of a systematic reevaluation. A possible way to test this hypothesis is to study the BOLD time series in cadaveric brains, in case significant heterocedasticity were found the assumption that heterocesdaticity is uniquely correlated with head motion should be revised accordingly.
+%motion corrected data still has a high signal variance, which is correlated with the head motion.
+
+
+Financial time series in their level form are random walk, that is nonstationary, \footnote{Why is a random walk not a stationary process? A random-walk series is, therefore, not weakly stationary, and we call it a unit-root nonstationary time series. For stationarity, the entire distribution has to be constant over time, not only its mean also the std deviation. To turn this into a stationary process, you would have to equally allow for all initial conditions – which is impossible as there is no uniform distribution on the real numbers.  If we treat the random-walk model as a special AR(1) model, then the coefficient of $\alpha p_t−1$ is 1 and therefore the moment depend on time t. If $|\alpha| < 1$, the moments do not depend on time and it is said to be weakly stationary.}
+on the other hand, on the first difference form they are generally stationary, I(1). Therefore, instead of modeling the levels of financial time series, why not model their first differences? But, these first differences often exhibit wide swings, or volatility, suggesting that the variance of financial time series varies over time. How can we model such “varying variance”? This is where the so-called autoregressive conditional heteroscedasticity (ARCH).
+
+Heteroscedasticity, or unequal variance, may have an autoregressive structure in that heteroscedasticity observed over different periods may be autocorrelated. 
+
+
+%(1)ACF-Stationarity, (2) Multicollinearity, (3) Heteroscedasticity
+
+\subsubsection*{Autocorrelation-stationarity}
+%(1) Visual inspection with the correlogram and ADF test
+
+Several strategies for whitening the residuals such as autoregressive 
+algorithms (AR) can effectively reduce non-whitened residuals. In \cite{monti2011statistical} it is argued that the main source of autocorrelation in BOLD time-series could be model with an AR(2) model.
+
+The autocorrelations considered as a function of lag $k$ are called autocorrelation function (ACF). Thus, the ACF together with the process mean and variance characterize the stationary process that describes the evolution of $y_t$. 
+The main tools for identification are the autocorrelation function (ACF) and the partial autocorrelation function (PACF).
+The autocorrelation (also know as serial correlation) function calculates the autocorrelation between a time series and the same time series lagged a certain period.
+The partial autocorrelation function measures correlation between time series that are k time periods apart after controlling for correlations at intermediate lags. Thus, for a time series $\rho_t = \rho_1, \rho_2 ....\rho_t$, the autocorrelation function ACF($\rho_k$) measures the correlation between the elements of original time series and the lagged time series $\rho_{t-k} = \rho_k, \rho_{k+1} ...\rho_{t-k}$ 
+and the resulting elements of the lagged time series $\rho_k$. 
+The PACF($\rho_k$)) is the correlation between $\rho_t$ and $\rho_{t-k}$ after removing the effect of the intermediate $\rho_{t+1} ...\rho_{t-k-1}$.
+The correlgrams in autocorrelation in Figure can be inspected to see if there is a clear pattern in the residuals, the residuals are supposed to be white noise 
+In other words, the correlograms of both autocorrelation and partial autocorrelation give the impression that the residuals estimated from the chosen ARIMA are purely random. Hence, there may not be any need to look for another ARIMA model.
+The  lower the values of Akaike and Schwarz statistics, the better the model.
+From the estimated ACF and PACF correlograms in Figure we see any trend in the time series suggesting that the  time series is stationary. The Dickey–Fuller unit root test is the analytical test to verify this point.
+
+In the absence of stimuli, as it is the case in resting state time series, it makes more sense to follow the Box-Jenkins methodology for time series analysis. 
+This methodology is standard in econometric analysis and is so far marginally employed in fMRI.  
+%http://www.sciencedirect.com/science/article/pii/S0168010297011541
+In essence, the BJ methodology is an iterative method of four steps: identification (choosing tentative p,d,q), estimation (parameter estimation of the model), diagnostic checking (are the estimated residuals white noise, if so, do forecasting, if not go to identification) and forecasting.Once we have the model ARIMA(pd,q) and we have estimated the parameters we must ask if the model is a reasonable fir to the data, one simple diagnostic is to study the residuals up to some lag. We see that the estimated ACF and PACF up to lag 5 none of the autocorrelations (panel a) and partial autocorrelations (panel b) are individually statistically significant.
+% See pag 361 Time Series Analysis: Forecasting & Control Box and Jenkins for a conditional probability like expression of an ARMA process.
+
+\subsection{Multicollinearity}
+%(2) 
+One assumption of CLRM is that there is no multicollinearity among the regressors included in the regression model. The degree of collinearity can be modeled using set theory.
+Why does the classical linear regression model assume that there is no multicollinearity among the X’s? The reasoning is this: If multicollinearity is perfect, the regression coefficients of the X variables are indeterminate and their standard errors are infinite. If multicollinearity is less than perfect the regression coefficients, although determinate, possess large standard errors (in relation to the coefficients themselves), which means the coefficients cannot be estimated with great precision or accuracy.
+Multicollinearity, arises when the number of observations barely exceeds the number of parameters to be estimated. If the pair-wise or zero-order correlation coefficient between two regressors is high, say, in excess of 0.8, then multicollinearity is a serious problem. 
+Multicollinearity is essentially a data deficiency problem 
+There is collinearity when two or more predictor variables in a multiple regression model are highly correlated, meaning that one can be linearly predicted from the others with a substantial degree of accuracy. The regressors (features) should converge to 0 for big lags, that is, $a_{i} < a_{j} for i > j$.
+
+
+
+% You may title this section "Methods" or "Models". 
+% "Models" is not a valid title for PLoS ONE authors. However, PLoS ONE
+% authors may use "Analysis" 
+\section*{Materials and Methods}
+\subsection*{}
+In the absence of stimuli, as it is the case in resting state time series, it makes more sense to follow the Box-Jenkins methodology for time series analysis. 
+This methodology is standard in econometric analysis and is so far marginally employed in fMRI.  
+%http://www.sciencedirect.com/science/article/pii/S0168010297011541
+In essence, the BJ methodology is an iterative method of four steps: identification (choosing tentative p,d,q), estimation (parameter estimation of the model), diagnostic checking (are the estimated residuals white noise, if so, do forecasting, if not go to identification) and forecasting.
+
+
+We study if there is a pattern in the residuals $y - \hat{y}$ ie. the observed minus the expected of the correlation.
+The time series deviates from pure noise if there is a correlation between one residual and the next. For example if the residual at time t was above expectation, then the residual at time $t+1$ is likely to be above average as well $(e_t >0, E(e_{t+1}>0))$.
+
+We perform a regression for each time series, in which the original time series is lagged from 1 to 5 seconds. Specifically, we fit the lagged model using OLS. If the OLS regression show correlation between the lagged values it indicates the existence of multicollinearity (see heatmap).
+Also for iid noise we would expect the coefficients $\beta_i$ to gradually decline to zero (the further in time the less correlated), that is, $\beta_i > \beta_{i+1}$.
+
+
+%Unit root testing tries to differentiate between deterministic trends from unit-root or stochastic trends. If the pvalue is above a critical size, then we cannot reject that there is a unit root (process is non stationary or has stochastic trends).
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+ & ADF test\\
+\hline
+H0 & A unit root is present in a time series sample  \\
+\hline
+HA & Stationarity or trend-stationarity  \\
+\hline
+\end{tabular}
+\caption{\label{tab:adf}Augmented Dickey Fuller test. Null hypothesis H0: a unit root is present in a time series sample. The alternative hypothesis is usually stationarity or trend-stationarity..}
+\end{table}
+
+% Results and Discussion can be combined.
+\section*{Results}
+
+The assumption made thus far is that the prediction errors are independent random variables with a constant variance that is independent of the past. However, this assumption appears inconsistent with the heteroscedasticity often seen for time series in business and economics, in particular.
+For example, financial time series such as stock returns often exhibit periods when the volatility is high and periods when it is lower. This characteristic feature, or stylized fact, is commonly referred to as volatility clustering.
+The autoregressive conditional heteroscedastic (ARCH) model was introduced by Engle
+(1982) to describe time-varying variability in a series of inflation rates in Britain. An extension of this model called the generalized conditional heteroscedastic(GARCH) model was proposed by Bollerslev (1986). These models are capable of describing not only volatility clustering but also features such as heavy-tailed behavior that is common in many economic and financial time series. Still, there are other features related to volatility that are not captured by the basic ARCH and GARCH models.
+
+%A Bayesian heteroscedastic GLM with application to fMRI data with motion spikes. We propose a voxel-wise general linear model with autoregressive noise and heteroscedastic noise innovations (GLMH) for analyzing functional magnetic resonance imaging (fMRI) data
+
+
+\section*{Discussion}
+\textit{The objective of B–J [Box–Jenkins] is to identify and estimate a statistical model which can be interpreted as having generated the sample data. If this estimated model is then to be used for forecasting we must assume that the features of this model are constant through time, and particularly over future time periods. Thus the simple reason for requiring stationary data is that any model which is inferred from these data can itself be interpreted as stationary or stable, therefore providing a valid basis for forecasting.} 
+%Michael Pokorny, An Introduction to Econometrics, Basil Blackwell, New York, 1987, p. 343
+
+Published research is based on implicit assumptions about the problem and data that are likely not correct and that produce estimates based on these assumptions.
+
+\section*{Supporting Information}
+
+% Include only the SI item label in the subsection heading. Use the \nameref{label} command to cite SI items in the text.
+
+\section*{Acknowledgments}
+
+\cite{Freeman:1987}
+\nolinenumbers
+
+%\section*{References}
+% Either type in your references using
+% \begin{thebibliography}{}
+% \bibitem{}
+% Text
+% \end{thebibliography}
+%
+% OR
+%
+% Compile your BiBTeX database using our plos2015.bst
+% style file and paste the contents of your .bbl file
+% here.
+% 
+%\begin{thebibliography}{10}
+%\bibitem{bib1}
+%Devaraju P, Gulati R, Antony PT, Mithun CB, Negi VS. Susceptibility to SLE in South Indian Tamils may be influenced by genetic selection pressure on TLR2 and TLR9 genes. Mol Immunol. 2014 Nov 22. pii: S0161-5890(14)00313-7. doi: 10.1016/j.molimm.2014.11.005
+
+%\bibitem{bib2}
+%Huynen MMTE, Martens P, Hilderlink HBM. The health impacts of globalisation: a conceptual framework. Global Health. 2005;1: 14. Available: http://www.globalizationandhealth.com/content/1/1/14.
+
+%\end{thebibliography}
+
+\bibliographystyle{plos2015.bst}
+\bibliography{../bibliography-jgr/bibliojgr}
+
+\end{document}
+
+%%%Assumptions
+
+%A1 is Autocorrelation is Assumption 5: Errors are iid $\sim N(0, \sigma^2I)$, this requires a three-parts assumption: a) the errors for different observations or time points are not correlated, $cov(u_i,u_j)=0$, b) the expected value of the error is 0, $E(\epsilon)=0$ and c) is Assumption 4: the variance is the same for all observations, $\sigma^2$. 
+% Why is this important?
+%Among others, factors that can introduce serial correlations are: hardware related low-frequency, oscillatory "noise" related to respiration and cardiac pulse, residual movements not accounted for coregistration (MCFLRT). Note that the presence of the serial correlations does not affect the unbiasedness of the parameters via OLS but affects the estimates of the error variance which in turn lead to bias test statistics (t test, F) and the statistical inferences on those statistics.
+%This assumption is more important for fMRI that what the attention payed for would seem to suggest. The presence of serial correlations means that the true number of observations (time points) or degrees of freedom is lower than what we think it is. This produces an underestimate of the error variance and thus an inflated test statistics (because the error variance is in the denominator, $t = \fraq{x - x_0}{\sigma/ \sqrt{n} }$).
+% testing the null hypothesis that the population mean x is equal to a specified value x_0, for a std deviation and a sample size n. The degrees of freedom used in this test are n − 1.
+ 
+%A1c: is homocedasticity, the variance of residuals to be constant across observations (time points or volumes) and the covariances  (off-diagonal elements in the variance-covariance matrix) to be 0. If this assumption is not met, the parameter estimate $\hat{\beta}$ is still unbiased but not efficient (confidence intervals too long or too short)
+
+%A2 is Assumption 3: the regressors in X are independent of error.
+
+%A3 is Multicollinearity: No regressor is a linear transformation of one or more regressors. This implies that none of the explanatory variables is perfectly correlated with any other or any combination of it. This is because in the `presence of perfect multicollinearity the inverse of $X^TX$ does not exist and we have infinite solutions that satisfy the GLM, that is, we loose degrees of freedom or as two columns become more and more correlated it becomes impossible to disentangle the unique impact of each on the dependent measure. 
+
+%As for the homoscedasticity assumption, the multicollinear- ity issue did not  , so far, much space in the fMRI methodol- ogy literature. There may be at least two reasons for this:  rst, the standard use of the pseudo-inverse method; second, this problem is typically dealt with at the creation of the experimental design (i.e., the X matrix). Indeed, much more energy has been spent on the issue of design efficiency (including multicollinearity mini- mization; c.f., Dale, 1999; Wager and Smith, 2003; Henson, 2007; Smith et al., 2007)
+
+%YS But in resting state the desgin matrix is not as important as in task experiments. In RS no tasks or events to model. Instead, the only things you need to model are potential sources of noise, which may include heart rate or respiration data, if you have it, and always motion data, since this can be an insidious confound in any FMRI analysis, but particularly for resting-state analyses.
+
+
+
+Assumption 1: The regression model is linear in the parameters, though it may or may not be linear in the variables. $Y = \beta_1 + \beta_2 X + \epsilon$. Note that the regressand Y and the regressor X may be non linear.
+
+Assumption 2: the X variable and the error term are independent, that is, cov(X,u)=0
+
+Assumption 3 or there is no specification error in the chosen regression model.: Zero mean value of the error term or E(u|X) = 0,  that is, the mean value of u conditional upon the given X is zero (positive ui values cancel out the negative ui values so that their average or mean effect on Y is zero). Assumption 3 implies that there is no specification bias or specification error in the model used in empirical analysis. In other words, the regression model is correctly specified. Leaving out important explanatory variables, including unnecessary variables, or choosing the wrong functional form of the relationship between the Y and X variables are some examples of specification error. 
+
+Assumption 4: Homoscedasticity or Constant Variance of ui. The variance of the error, or disturbance, term is the same regardless of the value of X
+%The word comes from the Greek verb skedanime, which means to disperse or scatter
+Stated differently, means that the Y populations corresponding to various X values have the same variance. 
+
+Assumption 5: No Autocorrelation between the error terms, technically, this is the assumption of no serial correlation, or no autocorrelation
+
+Assumption 6: The Number of Observations n Must Be Greater than the Number of Parameters to Be Estimated,Alternatively, the number of observations must be greater than the number of explanatory variables.
