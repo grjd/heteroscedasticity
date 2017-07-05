@@ -1,9 +1,9 @@
-\documentclass[10pt,letterpaper]{article} 
+\documentclass[10pt,letterpaper]{article}
 \usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
 
 % Use adjustwidth environment to exceed column width (see example table in text)
 \usepackage{changepage}
-
+\usepackage[numbers,super]{natbib}
 % Use Unicode characters when possible
 \usepackage[utf8]{inputenc}
 
@@ -17,7 +17,7 @@
 \usepackage{amsmath,amssymb}
 
 % cite package, to clean up citations in the main text. Do not remove.
-\usepackage{cite}
+%\usepackage{cite} cite and natbib are incompatible use one or the other
 
 % Use nameref to cite supporting information files (see Supporting Information section for more info)
 \usepackage{nameref,hyperref}
@@ -47,7 +47,7 @@
 \usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
 
 % Use the PLoS provided BiBTeX style
-\bibliographystyle{plos2015}
+%\bibliographystyle{plos2015}
 
 % Remove brackets from numbering in List of References
 \makeatletter
@@ -193,8 +193,7 @@ The GLMH arises out of the observation that the inclusion in the design matrix o
 %motion corrected data still has a high signal variance, which is correlated with the head motion.
 
 
-Financial time series in their level form are random walk, that is nonstationary, \footnote{Why is a random walk not a stationary process? A random-walk series is, therefore, not weakly stationary, and we call it a unit-root nonstationary time series. For stationarity, the entire distribution has to be constant over time, not only its mean also the std deviation. To turn this into a stationary process, you would have to equally allow for all initial conditions – which is impossible as there is no uniform distribution on the real numbers.  If we treat the random-walk model as a special AR(1) model, then the coefficient of $\alpha p_t−1$ is 1 and therefore the moment depend on time t. If $|\alpha| < 1$, the moments do not depend on time and it is said to be weakly stationary.}
-on the other hand, on the first difference form they are generally stationary, I(1). Therefore, instead of modeling the levels of financial time series, why not model their first differences? But, these first differences often exhibit wide swings, or volatility, suggesting that the variance of financial time series varies over time. How can we model such “varying variance”? This is where the so-called autoregressive conditional heteroscedasticity (ARCH).
+Financial time series in their level form are random walk, that is nonstationary, \footnote{Why is a random walk not a stationary process? A random-walk series is, therefore, not weakly stationary, and we call it a unit-root nonstationary time series. For stationarity, the entire distribution has to be constant over time, not only its mean also the std deviation. To turn this into a stationary process, you would have to equally allow for all initial conditions  which is impossible as there is no uniform distribution on the real numbers.  If we treat the random walk model as a special AR(1) model, then the coefficient of $\alpha p_t-1$ is 1 and therefore the moment depend on time t. If $|\alpha| < 1$, the moments do not depend on time and it is said to be weakly stationary.} on the other hand, on the first difference form they are generally stationary, I(1). Therefore, instead of modeling the levels of financial time series, why not model their first differences? But, these first differences often exhibit wide swings, or volatility, suggesting that the variance of financial time series varies over time. How can we model such “varying variance”? This is where the so-called autoregressive conditional heteroscedasticity (ARCH).
 
 Heteroscedasticity, or unequal variance, may have an autoregressive structure in that heteroscedasticity observed over different periods may be autocorrelated. 
 
@@ -290,7 +289,6 @@ Published research is based on implicit assumptions about the problem and data t
 
 \section*{Acknowledgments}
 
-\cite{Freeman:1987}
 \nolinenumbers
 
 %\section*{References}
@@ -315,7 +313,8 @@ Published research is based on implicit assumptions about the problem and data t
 
 %\end{thebibliography}
 
-\bibliographystyle{plos2015.bst}
+\bibliographystyle{abbrv}
+%\bibliographystyle{plos2015.bst}
 \bibliography{../bibliography-jgr/bibliojgr}
 
 \end{document}
